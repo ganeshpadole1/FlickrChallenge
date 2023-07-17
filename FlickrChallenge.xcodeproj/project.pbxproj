@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1F20775A2A653E1800876B92 /* FlickrPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2077582A653E1800876B92 /* FlickrPhotoCollectionViewCell.swift */; };
 		1F20775B2A653E1800876B92 /* FlickrPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2077592A653E1800876B92 /* FlickrPhotoCollectionViewCell.xib */; };
+		1F20775E2A654CB800876B92 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1F20775D2A654CB800876B92 /* SDWebImage */; };
+		1F2077602A654CB800876B92 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F20775F2A654CB800876B92 /* SDWebImageMapKit */; };
+		1F2077632A654D1200876B92 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2077622A654D1200876B92 /* SDWebImage */; };
 		1FAF93322A651F5000BDC861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF93312A651F5000BDC861 /* AppDelegate.swift */; };
 		1FAF93342A651F5000BDC861 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF93332A651F5000BDC861 /* SceneDelegate.swift */; };
 		1FAF93392A651F5000BDC861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FAF93372A651F5000BDC861 /* Main.storyboard */; };
@@ -49,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2077632A654D1200876B92 /* SDWebImage in Frameworks */,
+				1F2077602A654CB800876B92 /* SDWebImageMapKit in Frameworks */,
+				1F20775E2A654CB800876B92 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +172,11 @@
 			dependencies = (
 			);
 			name = FlickrChallenge;
+			packageProductDependencies = (
+				1F20775D2A654CB800876B92 /* SDWebImage */,
+				1F20775F2A654CB800876B92 /* SDWebImageMapKit */,
+				1F2077622A654D1200876B92 /* SDWebImage */,
+			);
 			productName = FlickrChallenge;
 			productReference = 1FAF932E2A651F5000BDC861 /* FlickrChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +205,10 @@
 				Base,
 			);
 			mainGroup = 1FAF93252A651F5000BDC861;
+			packageReferences = (
+				1F20775C2A654CB800876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				1F2077612A654D1200876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 1FAF932F2A651F5000BDC861 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -450,6 +465,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F20775C2A654CB800876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		1F2077612A654D1200876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F20775D2A654CB800876B92 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F20775C2A654CB800876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		1F20775F2A654CB800876B92 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F20775C2A654CB800876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		1F2077622A654D1200876B92 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F2077612A654D1200876B92 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FAF93262A651F5000BDC861 /* Project object */;
 }

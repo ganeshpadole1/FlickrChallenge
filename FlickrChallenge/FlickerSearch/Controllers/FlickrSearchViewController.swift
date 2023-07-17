@@ -8,16 +8,23 @@
 import UIKit
 
 class FlickrSearchViewController: UIViewController {
-
+    let itemsPerRow: CGFloat = 3
+    
     private var viewModel = FlickrViewModel()
     private var searchBarController: UISearchController!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private let sectionInsets = UIEdgeInsets(
+        top: 50.0,
+        left: 20.0,
+        bottom: 50.0,
+        right: 20.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Flickr Challenge"
-       
+        
         addSearchBar()
         configureUI()
         viewModelClosures()
@@ -26,8 +33,8 @@ class FlickrSearchViewController: UIViewController {
     func configureUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(nib: FlickrPhotoCollectionViewCell.nibName)
-
+        collectionView.register(nib: FlickrPhotoCollectionViewCell.reuseIdentifier)
+        
     }
 }
 
@@ -59,7 +66,7 @@ extension FlickrSearchViewController {
     fileprivate func viewModelClosures() {
         
         viewModel.showAlert = { [weak self] (message) in
-           
+            
         }
         
         viewModel.dataUpdated = { [weak self] in
@@ -78,7 +85,7 @@ extension FlickrSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlickrPhotoCollectionViewCell.nibName, for: indexPath) as! FlickrPhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlickrPhotoCollectionViewCell.reuseIdentifier, for: indexPath) as! FlickrPhotoCollectionViewCell
         return cell
     }
     
@@ -95,13 +102,30 @@ extension FlickrSearchViewController: UICollectionViewDataSource {
 //MARK:- UICollectionViewDelegateFlowLayout
 extension FlickrSearchViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width)/2, height: (collectionView.bounds.width)/2)
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        return sectionInsets
     }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
+        return sectionInsets.left
+    }
+    
 }
 
 //MARK:- UICollectionView
