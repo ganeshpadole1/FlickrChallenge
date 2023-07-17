@@ -36,7 +36,7 @@ class FlickrViewModel: NSObject {
                     }
                     completion()
                 case .failure(let message):
-                    //self.showAlert?(message)
+                    self.showAlert?(message.localizedDescription)
                     completion()
                 }
             }

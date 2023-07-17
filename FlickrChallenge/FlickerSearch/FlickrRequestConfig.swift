@@ -16,7 +16,7 @@ enum FlickrRequestConfig {
         switch self {
             
         case .searchRequest(let searchText):
-            let urlString = String(format: Constants.searchURL)
+            let urlString = String(format: Constants.searchURL, searchText)
             let reqConfig = Request.init(requestMethod: .get, urlString: urlString)
             return reqConfig
         }

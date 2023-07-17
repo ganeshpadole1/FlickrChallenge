@@ -8,7 +8,6 @@
 import UIKit
 
 class FlickrSearchViewController: UIViewController {
-    let itemsPerRow: CGFloat = 3
     
     private var viewModel = FlickrViewModel()
     private var searchBarController: UISearchController!
@@ -34,7 +33,6 @@ class FlickrSearchViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(nib: FlickrPhotoCollectionViewCell.reuseIdentifier)
-        
     }
 }
 
@@ -115,7 +113,7 @@ extension FlickrSearchViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 130, height: 130)
     }
     
     func collectionView(
