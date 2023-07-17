@@ -14,9 +14,9 @@ class FlickrSearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let sectionInsets = UIEdgeInsets(
-        top: 50.0,
+        top: 20,
         left: 20.0,
-        bottom: 50.0,
+        bottom: 20,
         right: 20.0)
     
     override func viewDidLoad() {
@@ -86,7 +86,7 @@ extension FlickrSearchViewController {
 extension FlickrSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.photoArray.count
+        return viewModel.photoArray.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,7 +113,7 @@ extension FlickrSearchViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: 130, height: 130)
+        return CGSize(width: 150, height: 150)
     }
     
     func collectionView(
