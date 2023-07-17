@@ -13,9 +13,9 @@ enum SearchError: Error {
 
 class FlickrSearchService {
     
-    func request(_ searchText: String, pageNo: Int, completion: @escaping (Result<Photos?, SearchError>) -> Void) {
+    func request(_ searchText: String, completion: @escaping (Result<Photos?, SearchError>) -> Void) {
         
-        guard let request = FlickrRequestConfig.searchRequest(searchText, pageNo).value else {
+        guard let request = FlickrRequestConfig.searchRequest(searchText).value else {
             return
         }
         

@@ -9,14 +9,14 @@ import UIKit
 
 enum FlickrRequestConfig {
     
-    case searchRequest(String, Int)
+    case searchRequest(String)
     
     var value: Request? {
         
         switch self {
             
-        case .searchRequest(let searchText, let pageNo):
-            let urlString = String(format: Constants.searchURL, searchText, pageNo)
+        case .searchRequest(let searchText):
+            let urlString = String(format: Constants.searchURL)
             let reqConfig = Request.init(requestMethod: .get, urlString: urlString)
             return reqConfig
         }

@@ -11,7 +11,6 @@ class FlickrViewModel: NSObject {
     
     private(set) var photoArray = [FlickrPhoto]()
     private var searchText = ""
-    private var pageNo = 1
     private var totalPageNo = 1
     
     var showAlert: ((String) -> Void)?
@@ -25,7 +24,7 @@ class FlickrViewModel: NSObject {
     
     private func fetchResults(completion:@escaping () -> Void) {
         
-        FlickrSearchService().request(searchText, pageNo: pageNo) { (result) in
+        FlickrSearchService().request(searchText) { (result) in
             
             switch result {
             case .success(let results):
@@ -41,16 +40,5 @@ class FlickrViewModel: NSObject {
             }
         }
     }
-    
-//    func fetchNextPage(completion:@escaping () -> Void) {
-//        if pageNo < totalPageNo {
-//            pageNo += 1
-//            fetchResults {
-//                completion()
-//            }
-//        } else {
-//            completion()
-//        }
-//    }
 }
 
