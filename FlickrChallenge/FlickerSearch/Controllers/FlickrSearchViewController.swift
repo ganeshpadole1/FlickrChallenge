@@ -66,13 +66,21 @@ extension FlickrSearchViewController {
     fileprivate func viewModelClosures() {
         
         viewModel.showAlert = { [weak self] (message) in
-            
+            self?.showAlert(message: message)
         }
         
         viewModel.dataUpdated = { [weak self] in
             print("data source updated")
             self?.collectionView.reloadData()
         }
+    }
+    
+    private func showAlert(title: String = "Flickr", message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title:NSLocalizedString("OK", comment: ""), style: .default) {(action) in
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
