@@ -26,17 +26,19 @@ class FlickrViewModel: NSObject {
         
         FlickrSearchService().request(searchText) { (result) in
             
-            switch result {
-            case .success(let results):
-                if let result = results {
-                    self.totalPageNo = result.pages
-                    self.photoArray.append(contentsOf: result.photo)
-                    self.dataUpdated?()
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let results):
+                    if let result = results {
+                        self.totalPageNo = result.pages
+                        self.photoArray.append(contentsOf: result.photo)
+                        self.dataUpdated?()
+                    }
+                    completion()
+                case .failure(let message):
+                    //self.showAlert?(message)
+                    completion()
                 }
-                completion()
-            case .failure(let message):
-                //self.showAlert?(message)
-                completion()
             }
         }
     }
