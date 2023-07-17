@@ -62,8 +62,38 @@
 		1F2077642A65572100876B92 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1FAF935D2A6523BE00BDC861 /* Request.swift */,
+				1FAF935B2A65238300BDC861 /* FlickrRequestConfig.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		1F2077752A65658900876B92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1FAF933A2A651F5400BDC861 /* Assets.xcassets */,
+				1FAF93332A651F5000BDC861 /* SceneDelegate.swift */,
+				1FAF93312A651F5000BDC861 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1F2077762A65659A00876B92 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1FAF933C2A651F5400BDC861 /* LaunchScreen.storyboard */,
+				1FAF93372A651F5000BDC861 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1F2077772A6565CC00876B92 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F2077582A653E1800876B92 /* FlickrPhotoCollectionViewCell.swift */,
+				1F2077592A653E1800876B92 /* FlickrPhotoCollectionViewCell.xib */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		1FAF93252A651F5000BDC861 = {
@@ -86,14 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				1FAF93452A651F7F00BDC861 /* FlickerSearch */,
-				1FAF93312A651F5000BDC861 /* AppDelegate.swift */,
-				1FAF93332A651F5000BDC861 /* SceneDelegate.swift */,
-				1FAF93372A651F5000BDC861 /* Main.storyboard */,
-				1FAF933A2A651F5400BDC861 /* Assets.xcassets */,
-				1FAF933C2A651F5400BDC861 /* LaunchScreen.storyboard */,
 				1FAF933F2A651F5400BDC861 /* Info.plist */,
-				1F2077582A653E1800876B92 /* FlickrPhotoCollectionViewCell.swift */,
-				1F2077592A653E1800876B92 /* FlickrPhotoCollectionViewCell.xib */,
 			);
 			path = FlickrChallenge;
 			sourceTree = "<group>";
@@ -101,6 +124,9 @@
 		1FAF93452A651F7F00BDC861 /* FlickerSearch */ = {
 			isa = PBXGroup;
 			children = (
+				1F2077772A6565CC00876B92 /* Custom Cells */,
+				1F2077762A65659A00876B92 /* Storyboard */,
+				1F2077752A65658900876B92 /* Resources */,
 				1F2077642A65572100876B92 /* Utility */,
 				1FAF934B2A651FD700BDC861 /* NetworkManager */,
 				1FAF934A2A651FCE00BDC861 /* Services */,
@@ -108,8 +134,6 @@
 				1FAF93482A651FBD00BDC861 /* Models */,
 				1FAF93472A651FB500BDC861 /* Constants */,
 				1FAF93462A651FAC00BDC861 /* ViewModels */,
-				1FAF935B2A65238300BDC861 /* FlickrRequestConfig.swift */,
-				1FAF935D2A6523BE00BDC861 /* Request.swift */,
 			);
 			path = FlickerSearch;
 			sourceTree = "<group>";
